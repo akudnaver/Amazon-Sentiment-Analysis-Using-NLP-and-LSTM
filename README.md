@@ -40,7 +40,7 @@ To set up the project locally, follow these steps:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/amazon-sentiment-analysis.git
+   git clone https://github.com/akudnaver/amazon-sentiment-analysis.git
    cd amazon-sentiment-analysis
    ```
 
@@ -131,10 +131,3 @@ Contributions are welcome! If you would like to contribute to this project, plea
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Create a new Pull Request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-**Note:** Replace placeholders such as `https://github.com/your-username/amazon-sentiment-analysis.git` with your actual repository link and `X%` with your model's actual accuracy. Add appropriate screenshots or demo links where indicated.
