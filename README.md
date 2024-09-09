@@ -113,13 +113,7 @@ The LSTM model achieves an accuracy of X% on the test dataset, demonstrating its
 
 ## Screenshots
 
-Here are some screenshots of the web application:
-
-- **Homepage:**
-  ![Homepage Screenshot](screenshots/homepage.png)
-
-- **Sentiment Analysis Result:**
-  ![Result Screenshot](screenshots/result.png)
+Here are some screenshots of the web application: file attached in the main branch.
 
 ## Contributing
 
