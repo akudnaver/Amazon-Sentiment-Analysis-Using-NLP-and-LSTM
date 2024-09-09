@@ -1,127 +1,96 @@
-# Amazon Sentiment Analysis Using NLP and LSTM
+# Amazon Sentiment Analysis Project
 
-This repository contains a sentiment analysis project that evaluates Amazon product reviews using Long Short-Term Memory (LSTM) networks. The project leverages Natural Language Processing (NLP) techniques to classify reviews into positive or negative sentiments and is deployed as a web application using Flask.
+## Overview
 
-## Project Overview
+This project focuses on building a **Sentiment Analysis** model for Amazon product reviews using **Deep Learning** with **TensorFlow** and **Keras**. The solution classifies customer reviews into positive or negative sentiments, helping understand customer feedback for products. The project has been deployed using **Gradio**, which provides a user-friendly web interface that not only classifies the sentiment but also generates feedback percentages based on the reviews.
 
-The goal of this project is to analyze and classify the sentiment of Amazon product reviews using LSTM, a type of Recurrent Neural Network (RNN) designed to handle sequential data. The system processes text reviews to predict their sentiment, providing valuable insights into customer opinions and feedback.
+## Key Features
 
-## Table of Contents
+- **Deep Learning Model**: Built using TensorFlow and Keras for sentiment classification.
+- **Data Processing**: Preprocessing of Amazon product reviews, including text cleaning, tokenization, padding, and embedding using techniques like Word Embedding (e.g., Word2Vec, GloVe).
+- **Feedback Percentage Generator**: A feature that calculates the percentage of positive and negative feedback based on the reviews provided.
+- **Gradio Interface**: A fully functional web interface for users to input their product reviews and see real-time sentiment classification results along with the feedback percentage breakdown.
+  
+## Project Structure
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Results](#results)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- **Sentiment Classification:** Classifies Amazon reviews as positive or negative.
-- **LSTM Model:** Utilizes an LSTM network for accurate sentiment prediction.
-- **Web Interface:** Flask-based web application for user interaction.
-
-## Technologies Used
-
-- **Python:** Programming language used for development.
-- **TensorFlow:** Framework used to build and train the LSTM model.
-- **Flask:** Web framework used for deploying the application.
-- **Pandas:** Data manipulation library for preprocessing data.
-- **NumPy:** Library for numerical operations.
-- **NLTK:** Natural Language Toolkit for text processing.
+```bash
+amazon-sentiment-analysis/
+│
+├── data/                       # Folder containing Amazon product reviews dataset
+├── model/                      # Folder for saving model architecture and weights
+├── notebooks/                  # Jupyter notebooks for exploratory data analysis and model training
+├── app.py                      # Main Python script for deploying the Gradio interface
+├── preprocess.py               # Script for data cleaning and text preprocessing
+├── train.py                    # Script to train the TensorFlow Keras model
+├── requirements.txt            # List of dependencies
+├── README.md                   # Project documentation
+└── saved_model/                # Folder for the saved trained model
+```
 
 ## Installation
 
-To set up the project locally, follow these steps:
-
-1. **Clone the Repository:**
-
+1. Clone the repository:
    ```bash
-   git clone https://github.com/akudnaver/amazon-sentiment-analysis.git
+   git clone https://github.com/your-repo/amazon-sentiment-analysis.git
    cd amazon-sentiment-analysis
    ```
 
-2. **Create and Activate a Virtual Environment:**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-   ```
-
-3. **Install Dependencies:**
-
+2. Install the required packages:
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+3. Download the dataset:
+   - Download the Amazon product reviews dataset and place it inside the `data/` directory.
+   
+4. Train the model:
+   - To train the sentiment analysis model, run the following command:
+     ```bash
+     python train.py
+     ```
 
-1. **Prepare the Data:**
-   - Download the dataset (Amazon reviews) and place it in the `data/` directory.
-
-2. **Train the Model:**
-
-   ```bash
-   python train_model.py
-   ```
-
-3. **Run the Flask Application:**
-
+5. Run the Gradio interface:
    ```bash
    python app.py
    ```
 
-4. **Access the Web Interface:**
-   - Open a web browser and navigate to `http://localhost:5000` to use the sentiment analysis web app.
+6. Open the Gradio interface in your browser using the provided URL to start classifying reviews.
 
-## Deployment
+## Model Details
 
-The web application can be deployed on a cloud platform like Heroku or AWS. Follow these steps for Heroku deployment:
+- **Architecture**: The sentiment analysis model uses a sequential neural network with LSTM layers to capture the context and sentiment from product reviews.
+- **Embedding**: Word embeddings are used to convert text into dense vectors. GloVe embeddings are used for better semantic understanding of words.
+- **Performance**: The model achieves good accuracy on the test data, showcasing its ability to predict positive or negative sentiments effectively.
 
-1. **Create a `Procfile` in the root directory:**
+## Gradio Interface
 
-   ```txt
-   web: python app.py
-   ```
+- The web interface allows users to input an Amazon product review and get real-time sentiment analysis.
+- Along with the sentiment classification, the interface provides a feedback percentage generator, showing how many reviews are positive or negative.
 
-2. **Commit Your Changes:**
+## Example
 
-   ```bash
-   git add .
-   git commit -m "Prepare for deployment"
-   ```
+1. **Input**: "This product is amazing! The quality is fantastic, and it arrived on time."
+   - **Output**: "Positive"
+   - **Feedback Percentage**: 90% Positive, 10% Negative
 
-3. **Push to Heroku:**
+2. **Input**: "Terrible experience. The product broke down after one use."
+   - **Output**: "Negative"
+   - **Feedback Percentage**: 30% Positive, 70% Negative
 
-   ```bash
-   heroku create
-   git push heroku main
-   ```
+## Future Improvements
 
-4. **Open Your Deployed Application:**
-
-   ```bash
-   heroku open
-   ```
-
-## Results
-
-The LSTM model achieves an accuracy of X% on the test dataset, demonstrating its effectiveness in classifying sentiment from Amazon reviews. Detailed metrics and performance evaluations are available in the `results/` directory.
-
-## Screenshots
-
-Here are some screenshots of the web application: file attached in the main branch.
+- Adding more layers or experimenting with different architectures like BERT or GPT-based models.
+- Including more classes for sentiment analysis (e.g., neutral or mixed sentiments).
+- Expanding the dataset to improve the model's generalization capabilities.
 
 ## Contributing
 
-Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+Contributions are welcome! Feel free to submit a pull request or open an issue.
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Make your changes and commit them (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature/YourFeature`).
-5. Create a new Pull Request.
+## License
 
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+This project demonstrates the use of **Deep Learning** for text-based sentiment analysis and provides a clean, functional user interface for interacting with the model, making it a valuable tool for analyzing product feedback.
