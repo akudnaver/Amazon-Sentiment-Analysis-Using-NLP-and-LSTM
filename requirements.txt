@@ -1,0 +1,9 @@
+pandas
+numpy
+seaborn
+tensorflow
+scikit-learn
+keras
+nltk
+gradio
+-e .
